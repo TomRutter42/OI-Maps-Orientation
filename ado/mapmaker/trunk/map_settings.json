@@ -1,0 +1,31 @@
+{
+ "drawMap": true, 
+ "colorScheme": "YlOrRd", 
+ "noLegend": false, 
+ "legendTitle": "", 
+ "labelForMissingData": "Missing Data", 
+ "scaleType": "quantile", 
+ "geoType": "cz", 
+ "cutoffs": [], 
+ "invertColors": true, 
+ "dataColumn": "Bj_shrunk_kr26_p25", 
+ "parts": 10, 
+ "mapScale": 1400, 
+ "legendLabels": [], 
+ "fontSize": "", 
+ "tooltips": [], 
+ "legendWidth": 30, 
+ "canvasHeight": 700, 
+ "legendStyle": "basic", 
+ "idColumn": "cz", 
+ "canvasWidth": 1350, 
+ "colors": [], 
+ "formatStr": ".2f", 
+ "margin": {
+  "top": 0, 
+  "right": 0, 
+  "left": 30, 
+  "bottom": 30
+ }, 
+ "legendHeight": 30
+}

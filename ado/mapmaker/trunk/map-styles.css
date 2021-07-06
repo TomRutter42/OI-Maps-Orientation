@@ -1,0 +1,48 @@
+/*styles for the map boundaries & text*/
+
+.g-map {
+  position: relative;
+  font-family: Helvetica, Arial;
+  font-size: 8px;
+}
+
+.g-map svg {
+  overflow: hidden;
+  position: absolute;
+}
+
+/* State outlines */
+.g-map .state {
+  fill: none;
+  stroke-width: 1;
+  stroke: #666;
+  stroke-opacity: 0.6;
+}
+
+/* State boundaries mesh -- overlaid on top of county, cz or zip maps*/
+.g-map .statemesh {
+  stroke-width:1;
+  fill: none;
+  stroke: #666;
+  stroke-opacity: 0.6;
+}
+
+/* Commuting Zone outlines */
+.g-map .cz {
+  stroke: #999;
+  stroke-width: 1;
+  stroke-opacity: 0.6;
+}
+
+/* County outlines */
+.g-map .ct {
+  stroke: #bbb;
+  stroke-width: 1;
+  stroke-opacity: 0.6;
+}
+
+/* all other lines */
+line {
+  stroke: #999;
+  shape-rendering: crispEdges;
+}
