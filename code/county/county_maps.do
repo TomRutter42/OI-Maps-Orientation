@@ -25,7 +25,6 @@ use "${github}/maps-drafting/inputs/county/county_data", clear
 
 ** The file we imported separately lists the two digit state code (although as numeric, so missing the leading zero) 
 ** and a three digit county code (also as numeric). So need to convert: 
-// tostring county, replace
 gen county_str = string(state, "%02.0f") + string(county, "%03.0f")
 drop county 
 rename county_str county
