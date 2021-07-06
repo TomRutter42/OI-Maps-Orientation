@@ -10,8 +10,13 @@
 * Set up additional ado path, just for today in case you don't have access to the Dropbox! 
 ** Usually, it's better to just use the ado files in: 
 ** Opportunity Insights Shared Workspace/Research files/ado
-adopath++ "${github}/OI-Maps-Oritentation/ado"
+adopath++ "${github}/OI-Maps-Orientation/ado"
 // adopath++ "${dropbox}/Research files/outside/oi_maps_orientation/ado"
+
+** Additionally, you will need to stick the "mapmaker" folder in your Stata personal folder. 
+** Find your Stata personal folder by running: 
+sysdir 
+** then simply copy this folder across. 
 * ==============================================================================
 
 * DATA IMPORT
