@@ -10,8 +10,6 @@
 # Set-up: Load packages, set filepaths, load functions
 #***********************************************************************************************************************************
 
-Sys.setenv(RSTUDIO_PANDOC = "C:/Program Files/RStudio/bin/pandoc")
-
 # Load packages (install first if you don't have them yet) 
 
 requiredPackages <- 
