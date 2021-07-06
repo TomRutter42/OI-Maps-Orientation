@@ -24,6 +24,11 @@ sysdir
 ** Struggling to read this file? I'd guess that your profile.do is not set up correctly -- let me know!
 use "${github}/OI-Maps-Orientation/inputs/county/county_data", clear 
 // adopath++ "${dropbox}/Research files/outside/oi_maps_orientation/inputs/county/county_data"
+
+
+** Finally, you need to install Python and PhantomJS. 
+** If you're install PhantomJS on Mac, I'd recommend following the 
+** top answer here: https://stackoverflow.com/questions/36993962/installing-phantomjs-on-mac 
 * ==============================================================================
 
 * CLEANING
