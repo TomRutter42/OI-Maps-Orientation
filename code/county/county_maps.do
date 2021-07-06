@@ -10,15 +10,15 @@
 * Set up additional ado path, just for today in case you don't have access to the Dropbox! 
 ** Usually, it's better to just use the ado files in: 
 ** Opportunity Insights Shared Workspace/Research files/ado
-adopath++ "${github}/maps-drafting/ado"
-
+adopath++ "${github}/OI-Maps-Oritentation/ado"
+// adopath++ "${dropbox}/Research files/outside/oi_maps_orientation/ado"
 * ==============================================================================
 
 * DATA IMPORT
 
 ** Struggling to read this file? I'd guess that your profile.do is not set up correctly -- let me know!
-use "${github}/maps-drafting/inputs/county/county_data", clear 
-
+use "${github}/OI-Maps-Orientation/inputs/county/county_data", clear 
+// adopath++ "${dropbox}/Research files/outside/oi_maps_orientation/inputs/county/county_data"
 * ==============================================================================
 
 * CLEANING
@@ -38,7 +38,8 @@ destring county, replace
 
 gen med_hhinc2016_rounded = round(med_hhinc2016, 1000)
 mapmaker med_hhinc2016_rounded, geo(county) legdecimals(0) colorscheme("RdYlBu") ///
-	savegraph("${github}/maps-drafting/outputs/stata_county_median_inc.png")
+	savegraph("${github}/OI-Maps-Orientation/outputs/stata_county_median_inc.png")
+	// OR savegraph("${dropbox}/Research files/outside/oi_maps_orientation/outputs/stata_county_median_inc.png")
 
 * Example 2: Loop through a bunch of variables, graphing them all
 
@@ -50,8 +51,9 @@ local vars_to_map poor_share2010 ///
 foreach var of local vars_to_map {
 	
 	mapmaker `var', geo(county) colorscheme("RdYlBu") legpercent legdecimals(1) ///
-		savegraph("${github}/maps-drafting/outputs/stata_county_`var'.png")
-
+		savegraph("${github}/OI-Maps-Orientation/outputs/stata_county_`var'.png")
+		// OR savegraph("${dropbox}/Research files/outside/oi_maps_orientation/outputs/stata_county_`var'")
+		
 }
 
 * ==============================================================================
