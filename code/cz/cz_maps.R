@@ -25,6 +25,7 @@ require(scales)
 require(rgeos)
 require(sf)
 require(haven)
+require(here)
 
 
 # loading file paths in the profile and setting relevant paths
@@ -40,6 +41,9 @@ paychex_folder <- file.path(research, 'outside/covid/derived/Paychex')
 cz_folder <- file.path(data_folder, "cz_shapefile")
 
 crosswalks <- file.path(research, '/outside/covid_rawdata/crosswalks')
+
+output_folder <- 
+  here("outputs")
 
 
 #***********************************************************************************************************************************
@@ -227,7 +231,7 @@ for (num in loopvars){
     
     
     # screenshot the map and save it in your current working directory
-    mymap2 %>%  mapshot(file = file.path(getwd(),filename),
+    mymap2 %>%  mapshot(file = file.path(output_folder, filename),
                         vwidth = vwidth, vheight = vheight, zoom = 4,
                         useragent =  'Mozilla/5.0 (compatible; MSIE 10.6; Windows NT 6.1; Trident/5.0; InfoPath.2; SLCC1; .NET CLR 3.0.4506.2152; .NET CLR 3.5.30729; .NET CLR 2.0.50727) 3gpp-gba UNTRUSTED/1.0',
                         delay = 2)
