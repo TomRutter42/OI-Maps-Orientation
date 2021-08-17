@@ -125,11 +125,11 @@ for (cityfn in cities){
   mapdata_reduced <- mapdata
   
   # set zoom and lat long based on city
-  if (cityfn == "atlanta"){
+  if (cityfn == "atlanta") {
     latlong <- c(-84.414777, 33.764494)
     zoom <-
       legendpos <- "bottomright"
-  } else if(cityfn=="newyorkcity"){
+  } else if(cityfn == "newyorkcity") {
     latlong <- c(-73.959128, 40.711723)
     zoom <- 10 
     legendpos <- "topleft"
@@ -137,31 +137,29 @@ for (cityfn in cities){
     latlong <- c(-122.444719,37.764026)
     zoom <- 9.7
     legendpos <- "bottomleft"
-  } else if(cityfn=="losangeles") {
+  } else if(cityfn == "losangeles") {
     latlong <- c(-118.300100, 33.944987)
     zoom <- 9 
     legendpos <- "bottomleft"
-    mapdata_reduced <- 
-      mapdata[substr(mapdata$zcta, 1, 2) == "90", ]
-  } else if(cityfn=="chicago"){
+  } else if(cityfn == "chicago") {
     latlong <- c(-87.8692, 41.8050) 
     zoom <-  9.5 
     legendpos <- "topright"
     mapdata_reduced <- 
       mapdata[substr(mapdata$zcta, 1, 2) == "60" | substr(mapdata$zcta, 1, 2) == "46", ]
-  } else if(cityfn=="washington"){
+  } else if(cityfn == "washington") {
     latlong <- c(-77.021454, 38.899391)
     zoom <- 12
     legendpos <- "topright"
-  } else if(cityfn=="boston"){
+  } else if(cityfn == "boston") {
     latlong <- c(-71.089257, 42.329114)
     zoom <- 11
     legendpos <- "topright"
-  } else if(cityfn=="seattle"){
+  } else if(cityfn == "seattle") {
     latlong <- c(-122.15000, 47.54000)
     zoom <- 10
     legendpos <- "topright"
-  } else if(cityfn=="charlotte"){
+  } else if(cityfn == "charlotte") {
     latlong <- c(-80.832583, 35.246141)
     zoom <- 10.1
     legendpos <- "topright"
