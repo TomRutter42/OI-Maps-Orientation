@@ -91,9 +91,6 @@ map_var_labels <-
     "Black", 
     "White")
 
-#restrict to a certain quartile of income
-restrictq <- "none"
-
 # set color scheme for each variable
 # "atlas" or "pink-purple" like atlas covariates
 color_scheme_names <- 
@@ -258,9 +255,6 @@ for (cityfn in cities){
     
     ## See here for additional info on Mapbox
     ## https://docs.mapbox.com/studio-manual/overview/publish-your-style/#mapboxjs-and-leaflet
-    
-    # basemap <- "https://api.mapbox.com/styles/v1/kaimatheson/ck21z1gw10ojz1cp9nohuo064/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1Ijoia2FpbWF0aGVzb24iLCJhIjoiY2p6bXVvMGY3MGgwejNia3p5NGY4ZHNxbyJ9.4W1gdX9t8hveowSiVstyhQ"
-    # basemap2 <- "https://api.mapbox.com/styles/v1/tomrutter42/ckd0cwxmm02pk1imscv2h7uwx/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidG9tcnV0dGVyNDIiLCJhIjoiY2tjdGNmdjZiMXd6ZDJ4bGZpbnRiYnUyNCJ9.RFkulnlN2IG_mf6TM95tDA"
     basemap2 <- "https://api.mapbox.com/styles/v1/tomrutter42/ckljiydyu0hub17o8nmaezrni/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidG9tcnV0dGVyNDIiLCJhIjoiY2tjdGNmdjZiMXd6ZDJ4bGZpbnRiYnUyNCJ9.RFkulnlN2IG_mf6TM95tDA"
     basemap_labels <- "https://api.mapbox.com/styles/v1/kaimatheson/ck21z38gi4nap1cmdw87c2h8n/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1Ijoia2FpbWF0aGVzb24iLCJhIjoiY2p6bXVvMGY3MGgwejNia3p5NGY4ZHNxbyJ9.4W1gdX9t8hveowSiVstyhQ"
     bm_attr <- "<a href='https://www.mapbox.com/map-feedback/'>Mapbox</a>"
@@ -298,7 +292,7 @@ for (cityfn in cities){
     vwidth = 700
     vheight = 744/992*vwidth
     
-    filename <- paste(cityfn, map_var, restrictq, sep = "_")
+    filename <- paste(cityfn, map_var, sep = "_")
     
     # change the file name if you want!
     mymap %>%  mapshot(file = file.path(output_folder, paste0(filename, ".png")),
@@ -307,6 +301,10 @@ for (cityfn in cities){
     
     saveWidget(mymap, 
                file = file.path(output_folder, paste0(filename, ".html")))
+    
+    # tidy up
+    unlink(file.path(output_folder, paste0(filename, "_files")), 
+           recursive = TRUE)
     
   }
   
